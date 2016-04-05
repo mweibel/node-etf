@@ -1,5 +1,5 @@
 {
-  "name": "etf",
+  "name": "erlang-term-format",
   "description": "Erlang External Term Format parser",
   "main": "index.js",
   "scripts": {
