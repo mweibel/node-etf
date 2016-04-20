@@ -652,7 +652,7 @@ class Parser extends Dissolve {
     return this.string(name, n).tap(() => {
       let i = 0
       let val = 0
-      for (var char of this.vars[name]) {
+      for (let char of this.vars[name]) {
         val += parseInt(char, 10) * Math.pow(B, i)
         i++
       }
