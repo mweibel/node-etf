@@ -167,7 +167,6 @@ class Parser extends Dissolve {
           }
         ]
       },
-      // FIXME: this probably doesn't work
       106: {
         impl: this.nil,
         name: 'nil'
