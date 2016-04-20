@@ -30,7 +30,7 @@ class Parser extends Dissolve {
         name: 'newFloat'
       },
       // FIXME: doesn't work yet as the bits field isn't necessary a multiple of 8
-      /*77: {
+      /* 77: {
         impl: this.complexTag,
         name: 'bitBinary',
         defs: [
@@ -465,7 +465,6 @@ class Parser extends Dissolve {
    */
   tagLoop (cb, limit) {
     return this.tag().tap(() => {
-
       cb()
       this.vars = {}
 
