@@ -524,15 +524,19 @@ function runTestCase (input, next) {
 }
 
 describe('parser', () => {
-  it('should parse the testData correctly', (done) => {
+  describe('test data', (done) => {
     let l = testData.length
     let ran = 0
     for (let i = 0; i < l; i++) {
-      runTestCase(testData[i], () => {
-        ran++
-        if (ran === l) {
-          done()
-        }
+      const input = testData[i]
+
+      it(`should succeed at parsing test case #${i}`, () => {
+        runTestCase(input, () => {
+          ran++
+          if (ran === l) {
+            done()
+          }
+        })
       })
     }
   })
