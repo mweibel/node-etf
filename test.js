@@ -509,9 +509,9 @@ const testData = [
 ]
 
 function runTestCase (input, next) {
-  var parser = new Parser()
+  const parser = new Parser()
 
-  var entries = []
+  let entries = []
   parser.on('readable', () => {
     const data = parser.read()
     entries.push(data)
@@ -524,6 +524,19 @@ function runTestCase (input, next) {
 }
 
 describe('parser', () => {
+  it('should throw an error when an unknown tag is passed', (done) => {
+    const parser = new Parser()
+
+    try {
+      parser.write(new Buffer([1]), () => {
+        done('Expected ParseError to be thrown')
+      })
+    } catch (e) {
+      e.should.be.an('error')
+      done()
+    }
+  })
+
   describe('test data', (done) => {
     let l = testData.length
     let ran = 0
