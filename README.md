@@ -35,6 +35,26 @@ const pid = [
 ]
 
 parser.write(new Buffer(pid))
+
+// The following structure will be logged:
+/*
+{
+  name: 'pid',
+  value: {
+    node: {
+      name: 'atom',
+      value: {
+        atom: 'foo',
+        len: 3
+      }
+    },
+    id: 1,
+    serial: 1,
+    creation: 1
+  }
+}
+*/
+
 ```
 
 ## Contributing
