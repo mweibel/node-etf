@@ -86,7 +86,7 @@ const testData = [
     ]
   },
   {
-    data: [103, 100, 0x00, 0x03, 0x66, 0x6f, 0x6f, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x01],
+    data: [103, 100, 0x00, 0x03, 0x66, 0x6f, 0xe4, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x01],
     expected: [
       {
         name: 'pid',
@@ -94,7 +94,7 @@ const testData = [
           node: {
             name: 'atom',
             value: {
-              atom: 'foo',
+              atom: 'foä',
               len: 3
             }
           },
@@ -543,8 +543,9 @@ describe('parser', () => {
     for (let i = 0; i < l; i++) {
       const input = testData[i]
 
-      it(`should succeed at parsing test case #${i}`, () => {
+      it(`should succeed at parsing test case #${i}`, (caseDone) => {
         runTestCase(input, () => {
+          caseDone()
           ran++
           if (ran === l) {
             done()

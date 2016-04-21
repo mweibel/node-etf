@@ -1,6 +1,7 @@
 'use strict'
 
 const Dissolve = require('dissolve')
+const iconv = require('iconv-lite')
 
 class ParserError extends Error {
   constructor (message) {
@@ -73,7 +74,7 @@ class Parser extends Dissolve {
             name: 'len'
           },
           {
-            impl: this.string,
+            impl: this.latin1String,
             name: 'atom',
             varsArgs: ['len']
           }
@@ -356,7 +357,7 @@ class Parser extends Dissolve {
             name: 'len'
           },
           {
-            impl: this.string,
+            impl: this.latin1String,
             name: 'atom',
             varsArgs: ['len']
           }
@@ -696,6 +697,20 @@ class Parser extends Dissolve {
       }
 
       this.vars[name] = vars
+    })
+  }
+
+  /**
+   * Latin1 encoded string
+   *
+   * @param {string} name   Name of the key in vars object
+   * @param {number} length Length in bytes of the string
+   *
+   * @returns {this}
+   */
+  latin1String (name, length) {
+    return this.buffer(name, length).tap(() => {
+      this.vars[name] = iconv.decode(this.vars[name], 'latin1')
     })
   }
 }

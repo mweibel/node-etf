@@ -18,7 +18,8 @@
   "author": "Michael Weibel <michael.weibel@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "dissolve": "deoxxa/dissolve#d67699a243160c1f873b6e592a1912c4c4bb0af4"
+    "dissolve": "deoxxa/dissolve#d67699a243160c1f873b6e592a1912c4c4bb0af4",
+    "iconv-lite": "^0.4.13"
   },
   "repository": {
     "type": "git",
