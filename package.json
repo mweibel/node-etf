@@ -1,6 +1,5 @@
 {
   "name": "erlang-term-format",
-  "version": "0.0.1",
   "description": "Erlang External Term Format parser",
   "main": "index.js",
   "scripts": {
