@@ -1,4 +1,5 @@
 # Erlang External Term Format
+[![npm version](https://badge.fury.io/js/erlang-term-format.svg)](https://badge.fury.io/js/erlang-term-format)
 [![Build Status](https://travis-ci.org/mweibel/node-etf.svg?branch=master)](https://travis-ci.org/mweibel/node-etf)
 [![Coverage Status](https://coveralls.io/repos/github/mweibel/node-etf/badge.svg?branch=master)](https://coveralls.io/github/mweibel/node-etf?branch=master)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
