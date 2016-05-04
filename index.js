@@ -506,7 +506,7 @@ class Parser extends Dissolve {
     return this.uint8('tag').tap(() => {
       const tag = this.tagMap[this.vars.tag]
       if (!tag) {
-        throw new ParserError(`Unable to read tag ${this.vars.tag}`)
+        return this.emit('error', new ParserError(`Unable to read tag ${this.vars.tag}`))
       }
       tag.impl.call(this, tag.name, tag.def)
     }).tap(() => {
